@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:18
+    container_name: postgresql18
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data:/var/lib/postgresql
+    restart: unless-stopped
+    networks:
+      - deb-network
+networks:
+  deb-network:
+    external: true

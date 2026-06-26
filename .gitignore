@@ -1,0 +1,32 @@
+
+# =========================
+# Environment Variables
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Docker
+# =========================
+docker-compose.override.yml
+*.pid
+*.log
+
+# Persistent data
+/data/*
+!/data/.yourdata
+
+# =========================
+# OS Junk
+# =========================
+
+.DS_Store
+Thumbs.db
+
+# =========================
+# Editor / IDE
+# =========================
+
+.vscode/
+.idea/
