@@ -4,8 +4,10 @@ services:
     container_name: postgresql18
     env_file:
       - .env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     ports:
-      - "5432:5432"
+      - "${IP_ADDRESS_OPENVPN}:${PUBLISH_PORT_POSTGRES}:5432/tcp"
     volumes:
       - ./data:/var/lib/postgresql
     restart: unless-stopped
